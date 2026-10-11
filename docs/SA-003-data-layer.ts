@@ -1,4 +1,4 @@
-// SA-003 — Data layer & types, Klinik Gigi Arunika (fiktif), Semarang
+// SA-003: Data layer & types, Klinik Gigi Arunika (fiktif), Semarang
 // Semua nama, alamat, nomor WA, dan link maps di bawah adalah PLACEHOLDER untuk demo.
 // File ini akan dipindah ke src/data/clinic.ts saat scaffold project (SA-004).
 

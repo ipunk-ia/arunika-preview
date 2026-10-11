@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Token sumber: docs/SA-001. Jangan tambah warna di luar tabel itu. */
+@theme {
+  --color-base: #fafaf9;
+  --color-surface: #f5f5f4;
+  --color-line: #e7e5e4;
+  --color-muted: #57534e;
+  --color-body: #292524;
+  --color-heading: #1c1917;
+  --color-accent: #1c3d5a;
+  --color-on-accent: #ffffff;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility container-main {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 48rem) {
+    padding-inline: 2rem;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility section {
+  padding-block: 4.5rem;
+  @media (min-width: 64rem) {
+    padding-block: 7rem;
+  }
+}
+
+@utility card {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-line);
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-accent);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: var(--color-on-accent);
+  transition: opacity 150ms;
+  &:hover {
+    opacity: 0.92;
+  }
+}
+
+@utility btn-outline {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-accent);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: background-color 150ms;
+  &:hover {
+    background-color: var(--color-surface);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-base);
+  color: var(--color-body);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
